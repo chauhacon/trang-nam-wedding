@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#242820">
+  <title>Thiệp Cưới Hoàng Hải Nam &amp; Nguyễn Hà Trang</title>
+  <meta name="description" content="Thiệp cưới Hải Nam và Hà Trang. Tháng Một 2027 tại Thanh Hóa và Hà Nội.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chauhacon.github.io/trang-nam-wedding/">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:title" content="Thiệp Cưới Hoàng Hải Nam &amp; Nguyễn Hà Trang">
+  <meta property="og:description" content="Trân trọng kính mời bạn đến chung vui cùng Hải Nam và Hà Trang. Tháng Một 2027.">
+  <meta property="og:image" content="https://chauhacon.github.io/trang-nam-wedding/assets/photos/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hải Nam và Hà Trang trong khu vườn">
+  <link rel="icon" href="./assets/favicon.svg">
+  <link rel="apple-touch-icon" href="./assets/apple-touch.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="hero" id="dau-trang">
+    <div class="hero-photo" id="hero-photo"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-bar">
+      <a href="#dau-trang" class="brand" aria-label="Về đầu trang"><img src="./assets/logo-white.png" alt="" width="48" height="48"></a>
+      <nav aria-label="Điều hướng thiệp cưới">
+        <a href="#lich-cuoi">Lịch cưới</a><a href="#khoanh-khac">Ảnh cưới</a>
+      </nav>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">Thiệp mời cưới</p>
+      <h1><span id="groom"></span><em>&amp;</em><span id="bride"></span></h1>
+      <p class="hero-date" id="hero-date"></p>
+      <a class="scroll-prompt" href="#loi-ngo">Mở thiệp <i data-lucide="chevron-down" aria-hidden="true"></i></a>
+    </div>
+  </header>
+  <main>
+    <section class="invitation section" id="loi-ngo" aria-labelledby="guest-name">
+      <div class="container narrow" data-reveal>
+        <p class="eyebrow">Lời ngỏ</p>
+        <p class="invitation-prefix" id="guest-prefix"></p>
+        <h2 id="guest-name"></h2>
+        <p id="invitation-copy"></p>
+        <p class="signature" id="signature"></p>
+      </div>
+    </section>
+
+    <section class="story section" aria-labelledby="story-title">
+      <div class="container">
+        <header class="section-heading" data-reveal>
+          <h2 id="story-title">Chuyện chúng mình</h2>
+          <p class="story-intro" id="story-intro"></p>
+        </header>
+        <div class="story-grid" id="story-photos" data-reveal></div>
+      </div>
+    </section>
+
+    <section class="events section" id="lich-cuoi" aria-labelledby="events-title">
+      <div class="container">
+        <header class="section-heading" data-reveal><h2 id="events-title">Thời gian &amp; địa điểm</h2></header>
+        <div class="event-grid" id="events" data-reveal></div>
+      </div>
+    </section>
+
+    <section class="countdown section" aria-labelledby="countdown-title">
+      <div class="container narrow" data-reveal>
+        <h2 id="countdown-title">Đếm ngược đến ngày cưới</h2>
+        <p id="countdown-event"></p>
+        <div class="clock" id="clock" data-target="">
+          <div><span id="days">00</span>Ngày</div><div><span id="hours">00</span>Giờ</div>
+          <div><span id="minutes">00</span>Phút</div><div><span id="seconds">00</span>Giây</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="khoanh-khac" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section-heading" data-reveal><h2 id="gallery-title">Khoảnh khắc</h2></header>
+        <div class="gallery" id="gallery" data-reveal></div>
+      </div>
+    </section>
+  </main>
+  <footer><img src="./assets/logo-black.png" alt="" width="54" height="54"><p id="footer-names"></p></footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Ảnh cưới phóng to" data-lenis-prevent>
+    <button class="icon-button lightbox-close" aria-label="Đóng ảnh" autofocus><i data-lucide="x" aria-hidden="true"></i></button>
+    <button class="icon-button lightbox-prev" aria-label="Ảnh trước"><i data-lucide="chevron-left" aria-hidden="true"></i></button>
+    <figure><img id="lightbox-img" alt=""><figcaption id="lightbox-caption"></figcaption></figure>
+    <button class="icon-button lightbox-next" aria-label="Ảnh tiếp theo"><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+  </dialog>
+  <noscript><p class="noscript">Vui lòng bật JavaScript để xem thiệp cưới và lịch tiệc.</p></noscript>
+</body>
+</html>

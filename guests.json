@@ -1,0 +1,7 @@
+[
+  { "slug": "huy-nhi", "prefix": "Thân mời", "name": "Anh Huy & Chị Nhi", "events": ["nha-gai","nha-trai"] },
+  { "slug": "chi-nhi", "prefix": "Thân mời", "name": "Chị Nhi", "events": ["nha-gai"] },
+  { "slug": "anh-huy", "prefix": "Kính mời", "name": "Anh Huy", "events": ["nha-gai"] },
+  { "slug": "hau-thuy", "prefix": "Kính mời", "name": "Bác Hậu Thuỷ", "events": ["nha-gai","nha-trai"] },
+  { "slug": "hieu-mai", "prefix": "Kính mời", "name": "Anh chị Hiếu Mai", "events": ["nha-trai"] }
+]
