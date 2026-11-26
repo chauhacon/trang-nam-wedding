@@ -16,6 +16,7 @@ Mở `http://localhost:8000/`. Hãy dùng máy chủ HTTP để trình duyệt c
 
 - Trong `config.js`, sửa tên, lời mời và danh sách `events`. Hai ngày âm lịch là 24/11 và 26/11 năm Bính Ngọ. [Lịch tháng 1/2027](https://amlichvietnam.vn/lich-am/2027/1)
 - Để thêm địa chỉ tư gia, điền `address` của mục **Lễ Nạp Tài**. Điền thêm `mapsUrl` nếu muốn hiện nút bản đồ cho tư gia. Giờ của buổi đầu tiên mỗi nhà là mốc đếm ngược cho nhà đó. Các tệp lịch dùng chính xác giờ UTC tương đương với giờ Việt Nam.
+- Sau khi sửa tên cô dâu chú rể hoặc thông tin buổi lễ trong `config.js`, chạy `node --experimental-default-type=module scripts/generate-calendars.mjs` (Node.js 20.10 trở lên) rồi commit các tệp cập nhật trong `assets/calendars/`. Nút **Thêm vào Lịch** tải tệp `.ics` từ thư mục này. Nếu Zalo hoặc Messenger chặn tải tệp, mở thiệp trong Safari hoặc Chrome.
 - Ảnh dùng trên trang nằm trong `assets/photos/web/`. Mở đầu dùng ảnh 2, phần câu chuyện dùng ảnh 4 và 5, thư viện dùng ảnh 1, 3 và 5. Với ảnh mới, cập nhật `src`, `alt`, `width` và `height` theo ảnh thật. `position` và `mobilePosition` có thể dùng giá trị như `"50% 56%"` để chỉnh tâm cắt. Ảnh thư viện có `wide: true` sẽ có khung ngang. Có thể thêm `fullSrc` cho ảnh phóng to.
 - Khi đổi ảnh chia sẻ, đặt ảnh ngang trong `assets/photos/` và cập nhật `og:image`, kích thước và mô tả trong `index.html`. Meta dùng URL HTTPS tuyệt đối để trình thu thập của ứng dụng chat đọc được trực tiếp. Cập nhật tiêu đề và mô tả trong HTML nếu đổi tên hoặc nội dung chia sẻ. [Open Graph](https://ogp.me/)
 

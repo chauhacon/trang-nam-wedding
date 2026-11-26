@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Hai Nam and Ha Trang//Wedding Invitation//VI
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:nha-trai-20270103T040000Z@trang-nam-wedding
+DTSTAMP:20261126T113023Z
+DTSTART:20270103T040000Z
+SUMMARY:Lễ Cưới · Hải Nam & Hà Trang
+LOCATION:Trung đoàn 280\, Ngõ 585\, Đường Nguyễn Văn Linh\, Phư
+ ờng Phúc Lợi\, TP. Hà Nội
+END:VEVENT
+END:VCALENDAR

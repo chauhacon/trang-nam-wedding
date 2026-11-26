@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Hai Nam and Ha Trang//Wedding Invitation//VI
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:nha-gai-20270101T040000Z@trang-nam-wedding
+DTSTAMP:20261126T113023Z
+DTSTART:20270101T040000Z
+SUMMARY:Tiệc Cưới Nhà Gái · Hải Nam & Hà Trang
+LOCATION:Hội trường DuBai – Sảnh Châu Á – Trung tâm TCSK Whit
+ e Palace\, Ngã tư Đại lộ Võ Nguyên Giáp – Trịnh Kiểm\, Ph
+ ường Hạc Thành\, Tỉnh Thanh Hóa
+END:VEVENT
+END:VCALENDAR

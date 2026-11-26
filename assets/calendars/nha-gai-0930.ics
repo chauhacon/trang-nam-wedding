@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Hai Nam and Ha Trang//Wedding Invitation//VI
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:nha-gai-20270101T023000Z@trang-nam-wedding
+DTSTAMP:20261126T113023Z
+DTSTART:20270101T023000Z
+SUMMARY:Lễ Nạp Tài · Hải Nam & Hà Trang
+LOCATION:Tư gia nhà gái\, 8 Lê Hồng Sơn\, Hạc Thành\, Thanh Hóa\
+ , Vietnam
+END:VEVENT
+END:VCALENDAR

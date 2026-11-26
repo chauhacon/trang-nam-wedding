@@ -1,9 +1,9 @@
+import { calendarFilename, localTime } from "./calendar.js";
 import { wedding } from "./config.js";
 import { drawIcons, element, loadGuests } from "./shared.js";
 
 const byId = id => document.getElementById(id);
 const setText = (id, text) => { byId(id).textContent = text; };
-const localTime = (event, session) => `${event.date}T${session.time}:00+07:00`;
 const formatDate = (date, separator) => date.split("-").reverse().join(separator);
 
 function image(photo, eager = false) {
@@ -20,36 +20,10 @@ function image(photo, eager = false) {
   return img;
 }
 
-function calendarLink(event, session, start) {
-  const timestamp = date => new Date(date).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
-  const escape = value => value.replace(/[\\,;]/g, "\\$&").replace(/\r?\n/g, "\\n");
-  const lines = [
-    "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Hai Nam and Ha Trang//Wedding Invitation//VI",
-    "CALSCALE:GREGORIAN", "BEGIN:VEVENT",
-    `UID:${event.slug}-${timestamp(start)}@trang-nam-wedding`,
-    `DTSTAMP:${timestamp(Date.now())}`, `DTSTART:${timestamp(start)}`,
-    `SUMMARY:${escape(`${session.title} · ${wedding.signature}`)}`,
-    `LOCATION:${escape([session.venue, session.address].filter(Boolean).join(", "))}`,
-    "END:VEVENT", "END:VCALENDAR",
-  ];
-  const encoder = new TextEncoder();
-  const folded = lines.map(line => {
-    let bytes = 0;
-    let result = "";
-    for (const char of line) {
-      const length = encoder.encode(char).length;
-      if (bytes + length > 75) {
-        result += "\r\n ";
-        bytes = 1;
-      }
-      result += char;
-      bytes += length;
-    }
-    return result;
-  });
-  const link = action("Thêm vào Lịch", "calendar-plus",
-    `data:text/calendar;charset=utf-8,${encodeURIComponent(folded.join("\r\n") + "\r\n")}`);
-  link.download = `${event.slug}-${session.time.replace(":", "")}.ics`;
+function calendarLink(event, session) {
+  const filename = calendarFilename(event, session);
+  const link = action("Thêm vào Lịch", "calendar-plus", `./assets/calendars/${filename}`);
+  link.download = filename;
   return link;
 }
 
@@ -86,7 +60,7 @@ function renderEvent(event) {
       map.rel = "noopener noreferrer";
       actions.append(map);
     }
-    actions.append(calendarLink(event, session, start));
+    actions.append(calendarLink(event, session));
     details.append(actions);
     row.append(time, details);
     card.append(row);
