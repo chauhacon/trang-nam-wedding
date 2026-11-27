@@ -25,8 +25,8 @@ export const wedding = {
   ],
   galleryImages: [
     photo(1, ""),
+    photo(4, ""),
     photo(3, ""),
-    photo(2, ""),
     photo(5, ""),
   ],
   events: [
