@@ -69,27 +69,42 @@ function renderEvent(event) {
 }
 
 function startCountdown(events) {
-  const times = events.map(event => ({
-    label: event.label, iso: localTime(event, event.sessions[0]),
-  })).sort((a, b) => Date.parse(a.iso) - Date.parse(b.iso));
-  const clock = byId("clock");
+  const section = byId("countdown-clocks");
+  const units = [["Ngày", 86400], ["Giờ", 3600], ["Phút", 60], ["Giây", 1]];
+  const clocks = events.map(event => {
+    const group = element("div", undefined, "countdown-clock");
+    if (events.length > 1) group.append(element("h3", event.label, "countdown-label"));
+    const clock = element("div", undefined, "clock");
+    const values = units.map(([label]) => {
+      const cell = element("div");
+      const value = element("span", "00");
+      cell.append(value, label);
+      clock.append(cell);
+      return value;
+    });
+    const done = element("p", "Ngày cưới đã đến. Cảm ơn bạn đã chung vui!", "countdown-done");
+    done.hidden = true;
+    group.append(clock, done);
+    section.append(group);
+    return { clock, done, values, target: Date.parse(localTime(event, event.sessions[0])) };
+  });
+
   function update() {
     const now = Date.now();
-    const target = times.find(time => Date.parse(time.iso) > now);
-    if (!target) {
-      setText("countdown-event", "Ngày cưới đã đến. Cảm ơn bạn đã chung vui!");
-      clock.hidden = true;
-      return false;
+    let hasUpcoming = false;
+    for (const { clock, done, values, target } of clocks) {
+      const finished = now >= target;
+      clock.hidden = finished;
+      done.hidden = !finished;
+      if (finished) continue;
+      hasUpcoming = true;
+      let remaining = Math.ceil((target - now) / 1000);
+      units.forEach(([, size], index) => {
+        values[index].textContent = String(Math.floor(remaining / size)).padStart(2, "0");
+        remaining %= size;
+      });
     }
-    if (clock.dataset.target !== target.iso) {
-      clock.dataset.target = target.iso;
-      setText("countdown-event", `${target.label} · Giờ Việt Nam (UTC+7)`);
-    }
-    const remaining = Math.ceil((Date.parse(target.iso) - now) / 1000);
-    const parts = { days: Math.floor(remaining / 86400), hours: Math.floor(remaining / 3600) % 24,
-      minutes: Math.floor(remaining / 60) % 60, seconds: remaining % 60 };
-    Object.entries(parts).forEach(([id, value]) => setText(id, String(value).padStart(2, "0")));
-    return true;
+    return hasUpcoming;
   }
   if (update()) {
     const timer = setInterval(() => { if (!update()) clearInterval(timer); }, 1000);
