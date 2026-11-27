@@ -5,7 +5,7 @@
   { "slug": "nguyen-trong-will-bao-tran", "prefix": "Thân mời", "name": "Nguyễn Trọng Will & Bảo Trân", "events": ["nha-gai", "nha-trai"] },
   { "slug": "hoang-gia-bao-anh", "prefix": "Thân mời", "name": "Hoàng Già & Bảo Anh", "events": ["nha-gai", "nha-trai"] },
   { "slug": "em-kiet", "prefix": "Thân mời", "name": "Em Kiệt", "events": ["nha-gai", "nha-trai"] },
-  { "slug": "thinh-luu-moc-di", "prefix": "Thân mời", "name": "Thịnh Lưu & Mộc Di", "events": ["nha-gai", "nha-trai"] },
+  { "slug": "thinh-luu-thuy-dung", "prefix": "Thân mời", "name": "Thịnh Lưu & Thuỳ Dung", "events": ["nha-gai", "nha-trai"] },
   { "slug": "em-moka", "prefix": "Thân mời", "name": "Em Moka", "events": ["nha-gai", "nha-trai"] },
   { "slug": "chi-tinh-iu-anh-rod", "prefix": "Thân mời", "name": "Chị Tình iu & anh Rod", "events": ["nha-gai", "nha-trai"] },
   { "slug": "chi-thao-chip", "prefix": "Thân mời", "name": "Chị Thảo Chíp", "events": ["nha-gai", "nha-trai"] },
