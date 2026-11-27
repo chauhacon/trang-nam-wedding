@@ -11,16 +11,23 @@ export const wedding = {
   signature: "Hải Nam & Hà Trang",
   defaultGreeting: { prefix: "Trân trọng kính mời", name: "Quý khách" },
   invitation: "Có những ngày thật đặc biệt khi được sẻ chia cùng những người mình yêu quý. Hải Nam và Hà Trang trân trọng mời bạn đến chung vui và cùng gia đình chứng kiến khoảnh khắc chúng mình bắt đầu một chương mới.",
-  heroImage: { ...photo(2, "Hải Nam và Hà Trang đứng bên nhau trong khu vườn"), mobilePosition: "50% 56%" },
-  story: "Điều chúng mình mong chờ nhất khi về chung một nhà là những ngày rất đỗi bình thường: cùng ăn một bữa cơm, kể nhau nghe hôm nay có gì vui, rồi bàn xem cuối tuần sẽ đi đâu. Trước khi bắt đầu những ngày như thế, chúng mình muốn dành một ngày thật đặc biệt để sum họp với gia đình và bạn bè.",
+  heroImage: { ...photo(2, ""), mobilePosition: "50% 56%" },
+  story: "Chúng mình là hai tâm hồn phức tạp nhưng lại tìm thấy bình yên ở những điều giản dị khi bên nhau. Hạnh phúc của chúng mình được góp nhặt từ những niềm vui nhỏ bé, là những ngày ở cạnh nhau, những tiếng cười, những quan tâm và cả những khoảnh khắc vụn vặt mà chỉ hai đứa mới hiểu vì sao lại đáng nhớ đến thế. Sau những ngày tháng thiết kế nền móng vững chãi ấy, chúng mình quyết định đặt những viên gạch đầu tiên để cùng nhau xây dựng \“lâu đài tình ái\”. Mời bạn đến chung vui cùng gia đình chúng mình và tham dự lễ khởi công \“dự án trăm năm\” này.",
   couplePhotos: [
-    photo(4, "Hải Nam và Hà Trang ngồi cạnh nhau trong bộ lễ phục"),
-    photo(5, "Hà Trang ôm Hải Nam trong bộ ảnh cưới"),
+    {
+      src: "./assets/photos/web/wedding-photo-7.webp", width: 1200, height: 1800,
+      alt: "", person: "bride", role: "Cô dâu",
+    },
+    {
+      src: "./assets/photos/web/wedding-photo-6.webp", width: 1149, height: 1800,
+      alt: "", person: "groom", role: "Chú rể",
+    },
   ],
   galleryImages: [
-    photo(1, "Thiệp cưới, hoa và những kỷ vật của Hải Nam và Hà Trang"),
-    { ...photo(3, "Hải Nam và Hà Trang tựa vào nhau dưới tán cây", "50% 76%"), wide: true },
-    photo(5, "Khoảnh khắc thân mật của Hải Nam và Hà Trang"),
+    photo(1, ""),
+    photo(4, ""),
+    photo(2, ""),
+    photo(5, ""),
   ],
   events: [
     {

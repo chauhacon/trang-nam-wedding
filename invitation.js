@@ -1,5 +1,5 @@
 import { calendarFilename, localTime } from "./calendar.js";
-import { wedding } from "./config.js";
+import { wedding } from "./config.js?v=photo-descriptions";
 import { drawIcons, element, loadGuests } from "./shared.js";
 
 const byId = id => document.getElementById(id);
@@ -98,14 +98,13 @@ function startCountdown(events) {
 
 function renderStory() {
   setText("story-intro", wedding.story);
-  const people = [["Chú Rể", wedding.groom], ["Cô Dâu", wedding.bride]];
-  wedding.couplePhotos.forEach((photo, index) => {
+  for (const photo of wedding.couplePhotos) {
     const figure = element("figure");
     const caption = element("figcaption");
-    if (people[index]) caption.append(element("span", people[index][0], "story-roles"), people[index][1]);
+    caption.append(element("span", photo.role, "story-roles"), wedding[photo.person]);
     figure.append(image(photo), caption);
     byId("story-photos").append(figure);
-  });
+  }
 }
 
 function renderGallery() {
@@ -123,7 +122,7 @@ function renderGallery() {
   photos.forEach((photo, index) => {
     const button = element("button", undefined, photo.wide ? "wide" : undefined);
     button.type = "button";
-    button.setAttribute("aria-label", `Mở ảnh: ${photo.alt}`);
+    button.setAttribute("aria-label", photo.alt ? `Mở ảnh: ${photo.alt}` : `Mở ảnh ${index + 1}`);
     button.append(image(photo));
     button.addEventListener("click", () => {
       show(index);

@@ -19,7 +19,11 @@ svg{width:1.15em;height:1.15em;flex:none}
 .hero-photo,.hero-shade{position:absolute;inset:0;z-index:-1}
 .hero-photo{left:43%}
 .hero-photo img{width:100%;height:100%;object-fit:cover;transform:translateY(var(--parallax,0px)) scale(1.04)}
-.hero-shade{background:linear-gradient(90deg,#242820 0%,#242820 39%,rgba(36,40,32,.83) 49%,transparent 72%),linear-gradient(180deg,#15181165,transparent 24%)}
+.hero-shade{
+  background:
+    linear-gradient(90deg,var(--olive) 46%,rgba(36,40,32,.92) 51%,rgba(36,40,32,.5) 61%,rgba(36,40,32,.12) 70%,transparent 77%),
+    linear-gradient(180deg,#15181165,transparent 24%);
+}
 .hero-bar{display:flex;align-items:center;justify-content:space-between;margin:0 clamp(1.2rem,5vw,5rem);border-bottom:1px solid #fff5;padding:1rem 0}
 .brand img{object-fit:contain}
 .hero nav{display:flex;gap:clamp(.85rem,3.5vw,3rem);font-size:.875rem}
@@ -42,9 +46,9 @@ svg{width:1.15em;height:1.15em;flex:none}
 .signature{margin-top:1.5rem;font:italic 500 1.85rem var(--serif)}
 .story{background:#f0ebe4}
 .story-intro{max-width:60ch;margin-top:1rem}
-.story-grid{display:grid;grid-template-columns:1.1fr .72fr;align-items:start;gap:clamp(1.2rem,8vw,7rem)}
-.story-grid figure:nth-child(even){margin-top:clamp(2rem,8vw,7rem)}
+.story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:clamp(1.2rem,8vw,7rem)}
 .story-grid img,.gallery img{width:100%;height:auto;object-fit:cover}
+.story-grid img{aspect-ratio:2/3}
 .story-grid figcaption{margin-top:.9rem;font-size:clamp(1.45rem,3vw,2.5rem);font-family:var(--serif);line-height:1.12}
 .story-roles{display:block;font:600 .875rem/1.5 var(--sans);margin-bottom:.25rem}
 .event-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
@@ -82,6 +86,7 @@ footer img{object-fit:contain;margin:0 auto .5rem}
 .lightbox figure{text-align:center}
 .lightbox img{margin:auto;max-height:calc(100vh - 7rem);max-height:calc(100dvh - 7rem);object-fit:contain}
 .lightbox figcaption{margin-top:.5rem;font-size:.875rem}
+.lightbox figcaption:empty{display:none}
 body:has(.lightbox[open]){overflow:hidden}
 .icon-button{position:absolute;border:1px solid #fff6;border-radius:50%;background:#242820;color:white;width:44px;height:44px;display:grid;place-items:center;z-index:1}
 .lightbox-close{top:calc(.65rem + env(safe-area-inset-top));right:.75rem}
