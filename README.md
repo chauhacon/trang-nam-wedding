@@ -34,3 +34,10 @@ Mở `http://localhost:8000/`. Hãy dùng máy chủ HTTP để trình duyệt c
 2. Trong repository trên GitHub, mở **Settings → Pages → Build and deployment**. Chọn **Deploy from a branch**, chọn nhánh xuất bản và **/ (root)**, rồi bấm **Save**.
 3. Sau khi GitHub báo triển khai thành công, mở URL hiện trong **Settings → Pages**. Trang đang dùng `https://chauhacon.github.io/trang-nam-wedding/` trong meta chia sẻ, dựa trên repository hiện tại. Nếu GitHub cấp URL khác, sửa cả `og:url` và `og:image` trong `index.html`.
 4. Kiểm tra trang chính, `?guest=anh-minh`, `?guest=chi-linh`, `?guest=co-lan-chu-hung` và `links.html` dưới cùng thư mục dự án. [Hướng dẫn GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+## Tạo Google Form xác nhận tham dự
+
+1. Đăng nhập tài khoản Google sẽ quản lý phản hồi rồi tạo dự án tại [Google Apps Script](https://script.google.com/).
+2. Dán nội dung của [scripts/create-rsvp-form.gs](scripts/create-rsvp-form.gs) vào `Code.gs`. Chọn hàm `createWeddingRsvpForm`, bấm **Run**, rồi cấp quyền tạo biểu mẫu và bảng tính. Chạy một lần vì mỗi lần chạy sẽ tạo một cặp tệp mới.
+3. Mở **Execution log** và dùng đường dẫn **Chỉnh sửa và xuất bản**. Chọn **Publish**, đặt quyền trả lời thành **Anyone with the link** nếu khách không cần đăng nhập, rồi sao chép **Responder link**. Giữ bảng phản hồi ở chế độ riêng tư. [Hướng dẫn chia sẻ Google Form](https://support.google.com/docs/answer/2839588)
+4. Kiểm tra bằng cửa sổ ẩn danh. Chọn **Có thể tham dự** để kiểm tra rằng phải chọn ít nhất một buổi và có thể chọn cả hai. Chọn **Không thể tham dự** để kiểm tra rằng form chuyển thẳng đến phần lời nhắn tùy chọn. Kiểm tra phản hồi thử trong bảng tính trước khi gửi link cho khách.

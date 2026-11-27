@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
-  <link rel="stylesheet" href="./style.css?v=event-clocks">
-  <script type="module" src="./invitation.js?v=event-clocks"></script>
+  <link rel="stylesheet" href="./style.css?v=rsvp-buttons">
+  <script type="module" src="./invitation.js?v=personal-rsvp"></script>
 </head>
 <body>
   <header class="hero" id="dau-trang">
@@ -31,6 +31,7 @@
       <a href="#dau-trang" class="brand" aria-label="Về đầu trang"><img src="./assets/logo-white.png" alt="" width="48" height="48"></a>
       <nav aria-label="Điều hướng thiệp cưới">
         <a href="#lich-cuoi">Lịch cưới</a><a href="#khoanh-khac">Ảnh cưới</a>
+        <a class="hero-rsvp" id="header-rsvp-link" aria-label="Xác nhận tham dự" hidden>RSVP</a>
       </nav>
     </div>
     <div class="hero-copy">
@@ -65,6 +66,9 @@
       <div class="container">
         <header class="section-heading" data-reveal><h2 id="events-title">Thời gian &amp; địa điểm</h2></header>
         <div class="event-grid" id="events" data-reveal></div>
+        <div class="rsvp-action" id="rsvp-action" data-reveal hidden>
+          <a class="button" id="rsvp-link">Xác nhận tham dự</a>
+        </div>
       </div>
     </section>
 

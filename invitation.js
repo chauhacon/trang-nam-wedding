@@ -1,5 +1,5 @@
 import { calendarFilename, localTime } from "./calendar.js";
-import { wedding } from "./config.js?v=photo-descriptions";
+import { wedding } from "./config.js?v=rsvp";
 import { drawIcons, element, loadGuests } from "./shared.js";
 
 const byId = id => document.getElementById(id);
@@ -206,6 +206,16 @@ async function init() {
   setText("guest-name", greeting.name);
   setText("hero-date", events.map(event => formatDate(event.date, ".")).join(" & "));
   byId("events").append(...events.map(renderEvent));
+  if (selected) {
+    const rsvp = new URL(wedding.rsvp.url);
+    rsvp.searchParams.set("usp", "pp_url");
+    rsvp.searchParams.set(wedding.rsvp.nameField, selected.name);
+    byId("rsvp-link").href = rsvp.href;
+    const headerRsvp = byId("header-rsvp-link");
+    headerRsvp.href = rsvp.href;
+    headerRsvp.hidden = false;
+    byId("rsvp-action").hidden = false;
+  }
   startCountdown(events);
   initMotion();
   void drawIcons();

@@ -6,6 +6,10 @@ const photo = (number, alt, position = "50% 50%") => ({
 const maps = query => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 
 export const wedding = {
+  rsvp: {
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSdBE6FpBJbXlAFBmMl8PDbVMOxHxi8ED_cdTeWGah1kk9LqiQ/viewform",
+    nameField: "entry.1034237104",
+  },
   groom: "Hoàng Hải Nam",
   bride: "Nguyễn Hà Trang",
   signature: "Hải Nam & Hà Trang",
