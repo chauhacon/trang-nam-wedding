@@ -78,7 +78,8 @@ try {
       open.append(openIcon, "Open");
       const actions = element("div", undefined, "actions link-actions");
       actions.append(copy, open);
-      link.append(input, actions);
+      name.append(actions);
+      link.append(input);
       row.append(number, prefix, name, notes, link);
       body.append(row);
     });
