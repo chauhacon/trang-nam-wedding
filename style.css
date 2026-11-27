@@ -97,11 +97,15 @@ body:has(.lightbox[open]){overflow:hidden}
 .noscript{padding:1rem;text-align:center}
 .utility{max-width:1050px;margin:auto;padding:clamp(1rem,5vw,4rem)}
 .utility h1{font-size:clamp(2.5rem,6vw,4rem);margin-bottom:.75rem}
-.table-wrap{overflow:auto;margin-top:1.3rem}
+.guest-group{margin-top:1.8rem}
+.guest-group h2{font-size:clamp(1.65rem,4vw,2.3rem)}
+.table-wrap{overflow:auto;margin-top:.55rem}
 table{width:100%;border-collapse:collapse;text-align:left;background:#fffdfa}
 th,td{border-bottom:1px solid var(--line);padding:.65rem .85rem}
 th{background:#f0ebe4}
-.utility td:last-child{min-width:15rem}
+.guest-index{width:1%;white-space:nowrap;text-align:center;padding-inline:.4rem;font-variant-numeric:tabular-nums}
+.guest-notes{min-width:6rem;overflow-wrap:anywhere;white-space:pre-wrap}
+.utility td:last-child:not(.empty-group){min-width:15rem}
 .link-actions{margin-top:.4rem}
 .utility input{font-size:1rem}
 @media(max-width:760px){

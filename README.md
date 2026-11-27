@@ -22,7 +22,7 @@ Mở `http://localhost:8000/`. Hãy dùng máy chủ HTTP để trình duyệt c
 
 ## Tạo liên kết cho khách
 
-1. Sửa năm mục mẫu trong `guests.json`. Mỗi mục có `slug` duy nhất, `prefix` (lời xưng hô), `name` (tên hiển thị) và `events`.
+1. Sửa danh sách trong `guests.json`. Mỗi mục có `slug` duy nhất, `prefix` (lời xưng hô), `name` (tên hiển thị) và `events`. Thêm trường tùy chọn `"notes": "Nội dung ghi chú"` để hiển thị trong cột **Ghi chú** của `links.html`.
 2. Dùng `["nha-gai"]`, `["nha-trai"]` hoặc `["nha-gai", "nha-trai"]` để chọn lịch. Liên kết chung hoặc mã khách không nhận diện được sẽ hiện cả hai lịch.
 3. Mở `links.html` trên chính địa chỉ đã triển khai. Nhấn **Copy Link** bên cạnh tên rồi dán vào Zalo hoặc Messenger. Nếu ứng dụng chặn clipboard, sao chép từ ô liên kết đã được chọn.
 

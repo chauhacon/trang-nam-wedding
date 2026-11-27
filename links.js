@@ -1,20 +1,28 @@
 import { wedding } from "./config.js";
 import { drawIcons, element, loadGuests } from "./shared.js";
 
-const table = document.getElementById("guest-links");
+const groups = new Map(["both", "nha-trai", "nha-gai"].map(key => [
+  key, { body: document.getElementById(`guests-${key}`), count: 0 },
+]));
 const status = document.getElementById("link-status");
 
 try {
   const guests = await loadGuests();
-  for (const [index, guest] of guests.entries()) {
+  let skipped = 0;
+  for (const guest of guests) {
     const events = wedding.events.filter(event => guest.events.includes(event.slug));
+    const group = groups.get(events.length === 2 ? "both" : events[0]?.slug);
+    if (!group) {
+      skipped++;
+      continue;
+    }
     const url = new URL("./index.html", location.href);
     url.searchParams.set("guest", guest.slug);
     const row = element("tr");
-    const number = element("td", String(index + 1));
+    const number = element("td", String(++group.count), "guest-index");
     const name = element("th", `${guest.prefix} ${guest.name}`);
     name.scope = "row";
-    const invitation = element("td", events.length === 2 ? "Cả Hai" : events[0]?.label || "Chưa chọn sự kiện");
+    const notes = element("td", typeof guest.notes === "string" ? guest.notes : "", "guest-notes");
     const link = element("td");
     const input = element("input");
     input.value = url.href;
@@ -48,10 +56,18 @@ try {
     const actions = element("div", undefined, "actions link-actions");
     actions.append(copy, open);
     link.append(input, actions);
-    row.append(number, name, invitation, link);
-    table.append(row);
+    row.append(number, name, notes, link);
+    group.body.append(row);
   }
-  status.textContent = guests.length ? "" : "Danh sách khách mời đang trống.";
+  for (const { body, count } of groups.values()) {
+    if (count) continue;
+    const row = element("tr");
+    const cell = element("td", "Chưa có khách mời.", "empty-group");
+    cell.colSpan = 4;
+    row.append(cell);
+    body.append(row);
+  }
+  status.textContent = skipped ? `${skipped} khách chưa có sự kiện hợp lệ.` : "";
   void drawIcons();
 } catch {
   status.textContent = "Không tải được guests.json. Hãy kiểm tra tệp và mở trang qua HTTP.";
