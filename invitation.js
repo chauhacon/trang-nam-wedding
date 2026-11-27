@@ -1,6 +1,6 @@
 import { calendarFilename, localTime } from "./calendar.js";
 import { wedding } from "./config.js?v=rsvp";
-import { drawIcons, element, loadGuests } from "./shared.js";
+import { drawIcons, element, loadGuests } from "./shared.js?v=guest-groups";
 
 const byId = id => document.getElementById(id);
 const setText = (id, text) => { byId(id).textContent = text; };

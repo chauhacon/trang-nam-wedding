@@ -22,9 +22,9 @@ Mở `http://localhost:8000/`. Hãy dùng máy chủ HTTP để trình duyệt c
 
 ## Tạo liên kết cho khách
 
-1. Sửa danh sách trong `guests.json`. Mỗi mục có `slug` duy nhất, `prefix` (lời xưng hô), `name` (tên hiển thị) và `events`. Thêm trường tùy chọn `"notes": "Nội dung ghi chú"` để hiển thị trong cột **Ghi chú** của `links.html`.
+1. Sửa danh sách trong `guests.json` theo ba nhóm `testing` (kiểm thử), `bride` (khách nhà gái) và `groom` (khách nhà trai). Mỗi nhóm tương ứng với một bảng trong `links.html`. Mỗi mục có `slug` duy nhất trong cả ba nhóm, `prefix` (lời xưng hô), `name` (tên hiển thị) và `events`. Thêm trường tùy chọn `"notes": "Nội dung ghi chú"` để hiển thị trong cột **Ghi chú** của `links.html`.
 2. Dùng `["nha-gai"]`, `["nha-trai"]` hoặc `["nha-gai", "nha-trai"]` để chọn lịch. Liên kết chung hoặc mã khách không nhận diện được sẽ hiện cả hai lịch.
-3. Mở `links.html` trên chính địa chỉ đã triển khai. Nhấn **Copy Link** bên cạnh tên rồi dán vào Zalo hoặc Messenger. Nếu ứng dụng chặn clipboard, sao chép từ ô liên kết đã được chọn.
+3. Mở `links.html` trên chính địa chỉ đã triển khai. Nhấn **Copy** bên cạnh tên rồi dán vào Zalo hoặc Messenger. Nếu ứng dụng chặn clipboard, sao chép từ ô liên kết đã được chọn.
 
 `guests.json` và `links.html` đều có thể truy cập công khai trên GitHub Pages. Mã khách dùng để cá nhân hóa và lọc lịch hiển thị. Chỉ đưa thông tin có thể công khai vào các tệp của trang.
 

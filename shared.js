@@ -5,14 +5,21 @@ export function element(tag, text, className) {
   return node;
 }
 
-export async function loadGuests() {
+export async function loadGuestGroups() {
   const response = await fetch(new URL("./guests.json", import.meta.url), { cache: "no-store" });
   if (!response.ok) throw new Error("Không tải được danh sách khách mời.");
-  const guests = await response.json();
-  if (!Array.isArray(guests)) throw new Error("Danh sách khách mời phải là một mảng.");
-  return guests.filter(guest => guest && typeof guest.slug === "string" &&
-    typeof guest.prefix === "string" && typeof guest.name === "string" &&
-    Array.isArray(guest.events));
+  const groups = await response.json();
+  return Object.fromEntries(["testing", "bride", "groom"].map(key => {
+    const guests = groups?.[key];
+    if (!Array.isArray(guests)) throw new Error(`Danh sách ${key} phải là một mảng.`);
+    return [key, guests.filter(guest => guest && typeof guest.slug === "string" &&
+      typeof guest.prefix === "string" && typeof guest.name === "string" &&
+      Array.isArray(guest.events))];
+  }));
+}
+
+export async function loadGuests() {
+  return Object.values(await loadGuestGroups()).flat();
 }
 
 let iconScript;

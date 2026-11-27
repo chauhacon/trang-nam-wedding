@@ -7,38 +7,40 @@
   <title>Liên kết thiệp cưới · Hải Nam &amp; Hà Trang</title>
   <link rel="icon" href="./assets/favicon.svg">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@500&display=swap">
-  <link rel="stylesheet" href="./style.css?v=guest-tables">
-  <script type="module" src="./links.js?v=guest-tables"></script>
+  <link rel="stylesheet" href="./style.css?v=guest-name-color">
+  <script type="module" src="./links.js?v=link-actions"></script>
 </head>
 <body>
   <main class="utility">
     <h1>Liên kết thiệp cưới</h1>
     <p>Sao chép liên kết của từng khách để gửi qua Zalo hoặc Messenger.</p>
     <p id="link-status" class="status" role="status">Đang tải danh sách khách mời…</p>
-    <section class="guest-group" aria-labelledby="heading-both">
-      <h2 id="heading-both">Cả hai</h2>
+    <div class="guest-tabs" role="tablist" aria-label="Nhóm khách mời">
+      <button type="button" role="tab" id="tab-testing" aria-controls="panel-testing" aria-selected="false" tabindex="-1">Kiểm thử</button>
+      <button type="button" role="tab" id="tab-bride" aria-controls="panel-bride" aria-selected="true">Khách nhà gái</button>
+      <button type="button" role="tab" id="tab-groom" aria-controls="panel-groom" aria-selected="false" tabindex="-1">Khách nhà trai</button>
+    </div>
+    <section class="guest-group" role="tabpanel" id="panel-testing" aria-labelledby="tab-testing" tabindex="0" hidden>
       <div class="table-wrap">
-        <table aria-labelledby="heading-both">
-          <thead><tr><th scope="col" class="guest-index">STT</th><th scope="col">Khách mời</th><th scope="col">Ghi chú</th><th scope="col">Liên kết</th></tr></thead>
-          <tbody id="guests-both"></tbody>
+        <table aria-labelledby="tab-testing">
+          <thead><tr><th scope="col" class="guest-index">STT</th><th scope="col">Lời mời</th><th scope="col">Khách mời</th><th scope="col">Ghi chú</th><th scope="col">Liên kết</th></tr></thead>
+          <tbody id="guests-testing"></tbody>
         </table>
       </div>
     </section>
-    <section class="guest-group" aria-labelledby="heading-nha-trai">
-      <h2 id="heading-nha-trai">Nhà trai</h2>
+    <section class="guest-group" role="tabpanel" id="panel-bride" aria-labelledby="tab-bride" tabindex="0">
       <div class="table-wrap">
-        <table aria-labelledby="heading-nha-trai">
-          <thead><tr><th scope="col" class="guest-index">STT</th><th scope="col">Khách mời</th><th scope="col">Ghi chú</th><th scope="col">Liên kết</th></tr></thead>
-          <tbody id="guests-nha-trai"></tbody>
+        <table aria-labelledby="tab-bride">
+          <thead><tr><th scope="col" class="guest-index">STT</th><th scope="col">Lời mời</th><th scope="col">Khách mời</th><th scope="col">Ghi chú</th><th scope="col">Liên kết</th></tr></thead>
+          <tbody id="guests-bride"></tbody>
         </table>
       </div>
     </section>
-    <section class="guest-group" aria-labelledby="heading-nha-gai">
-      <h2 id="heading-nha-gai">Nhà gái</h2>
+    <section class="guest-group" role="tabpanel" id="panel-groom" aria-labelledby="tab-groom" tabindex="0" hidden>
       <div class="table-wrap">
-        <table aria-labelledby="heading-nha-gai">
-          <thead><tr><th scope="col" class="guest-index">STT</th><th scope="col">Khách mời</th><th scope="col">Ghi chú</th><th scope="col">Liên kết</th></tr></thead>
-          <tbody id="guests-nha-gai"></tbody>
+        <table aria-labelledby="tab-groom">
+          <thead><tr><th scope="col" class="guest-index">STT</th><th scope="col">Lời mời</th><th scope="col">Khách mời</th><th scope="col">Ghi chú</th><th scope="col">Liên kết</th></tr></thead>
+          <tbody id="guests-groom"></tbody>
         </table>
       </div>
     </section>

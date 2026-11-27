@@ -45,6 +45,7 @@ svg{width:1.15em;height:1.15em;flex:none}
 .invitation .eyebrow,.invitation-prefix,.signature,.story-roles,.event-lunar,.status{color:var(--taupe)}
 .invitation-prefix{margin-top:1.8rem}
 .invitation h2{margin:.35rem 0 1.3rem;overflow-wrap:anywhere}
+#guest-name,.guest-group tbody th[scope=row]{color:#4f5b3e}
 .signature{margin-top:1.5rem;font:italic 500 1.85rem var(--serif)}
 .story{background:#f0ebe4}
 .story-intro{max-width:60ch;margin-top:1rem}
@@ -105,16 +106,20 @@ body:has(.lightbox[open]){overflow:hidden}
 .noscript{padding:1rem;text-align:center}
 .utility{max-width:1050px;margin:auto;padding:clamp(1rem,5vw,4rem)}
 .utility h1{font-size:clamp(2.5rem,6vw,4rem);margin-bottom:.75rem}
-.guest-group{margin-top:1.8rem}
-.guest-group h2{font-size:clamp(1.65rem,4vw,2.3rem)}
+.guest-tabs{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem;padding:.5rem 0;background:var(--cream);border-bottom:1px solid var(--line)}
+.guest-tabs button{min-height:44px;padding:.4rem .65rem;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:.875rem}
+.guest-tabs button[aria-selected=true]{background:var(--olive);border-color:var(--olive);color:var(--cream)}
 .table-wrap{overflow:auto;margin-top:.55rem}
-table{width:100%;border-collapse:collapse;text-align:left;background:#fffdfa}
-th,td{border-bottom:1px solid var(--line);padding:.65rem .85rem}
-th{background:#f0ebe4}
-.guest-index{width:1%;white-space:nowrap;text-align:center;padding-inline:.4rem;font-variant-numeric:tabular-nums}
-.guest-notes{min-width:6rem;overflow-wrap:anywhere;white-space:pre-wrap}
-.utility td:last-child:not(.empty-group){min-width:15rem}
-.link-actions{margin-top:.4rem}
+.guest-group table{width:100%;min-width:42rem;table-layout:fixed;border-collapse:collapse;text-align:left;background:#fffdfa}
+.guest-group :is(th,td){border:1px solid var(--line);padding:.65rem .5rem;vertical-align:top}
+.guest-group th{background:#f0ebe4}
+.guest-group thead th:nth-child(2){width:4.75rem}
+.guest-group thead th:nth-child(4){width:6rem}
+.guest-group thead th:nth-child(5){width:13.5rem}
+.guest-group .guest-index{width:2.65rem;white-space:nowrap;text-align:center;padding-inline:.3rem;font-variant-numeric:tabular-nums}
+.guest-group tbody th[scope=row]{overflow-wrap:anywhere}
+.guest-notes{overflow-wrap:anywhere;white-space:pre-wrap}
+.link-actions{margin-top:.4rem;flex-wrap:nowrap;white-space:nowrap}
 .utility input{font-size:1rem}
 @media(max-width:760px){
   .hero-photo{left:0}
